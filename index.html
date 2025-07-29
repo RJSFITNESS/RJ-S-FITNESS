@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RJ'S FITNESS</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>RJ'S FITNESS</h1>
+    <p>Workout and Nutrition Plans</p>
+  </header>
+
+  <section class="plans">
+    <h2>Choose Your Plan</h2>
+    <div class="plan-card">
+      <h3>1 Month</h3>
+      <p>R50</p>
+      <button onclick="selectPlan(50, '1 Month Plan')">Select</button>
+    </div>
+    <div class="plan-card">
+      <h3>3 Months</h3>
+      <p>R100</p>
+      <button onclick="selectPlan(100, '3 Month Plan')">Select</button>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h2>Enter Your Details</h2>
+    <form id="payfastForm" method="POST" action="https://www.payfast.co.za/eng/process">
+      <input type="hidden" name="merchant_id" value="31172499">
+      <input type="hidden" name="merchant_key" value="58svrm1kvjac0">
+      <input type="hidden" name="return_url" value="thank-you.html">
+      <input type="hidden" name="cancel_url" value="https://yourusername.github.io/rjs-fitness/">
+      <input type="hidden" name="notify_url" value="https://yourusername.github.io/rjs-fitness/">
+
+      <input type="hidden" name="amount" id="amount">
+      <input type="hidden" name="item_name" id="item_name">
+
+      <input type="text" name="name_first" placeholder="Full Name" required>
+      <input type="email" name="email_address" placeholder="Email" required>
+      <input type="text" name="cell_number" placeholder="Phone Number" required>
+
+      <button type="submit">Pay with Visa</button>
+    </form>
+  </section>
+
+  <script>
+    function selectPlan(amount, planName) {{
+      document.getElementById('amount').value = amount;
+      document.getElementById('item_name').value = planName;
+      window.scrollTo({{ top: document.querySelector(".form-section").offsetTop, behavior: "smooth" }});
+    }}
+  </script>
+</body>
+</html>
