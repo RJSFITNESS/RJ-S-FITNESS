@@ -35,23 +35,9 @@
       <input type="hidden" name="cancel_url" value="https://yourusername.github.io/rjs-fitness/">
       <input type="hidden" name="notify_url" value="https://yourusername.github.io/rjs-fitness/">
 
+      <!-- Filled dynamically by JavaScript -->
       <input type="hidden" name="amount" id="amount">
       <input type="hidden" name="item_name" id="item_name">
 
-      <input type="text" name="name_first" placeholder="Full Name" required>
-      <input type="email" name="email_address" placeholder="Email" required>
-      <input type="text" name="cell_number" placeholder="Phone Number" required>
-
-      <button type="submit">Pay with Visa</button>
-    </form>
-  </section>
-
-  <script>
-    function selectPlan(amount, planName) {{
-      document.getElementById('amount').value = amount;
-      document.getElementById('item_name').value = planName;
-      window.scrollTo({{ top: document.querySelector(".form-section").offsetTop, behavior: "smooth" }});
-    }}
-  </script>
-</body>
-</html>
+      <!-- User contact info -->
+      <input type="text" name="name_first" placeholder="Full Name" required_
